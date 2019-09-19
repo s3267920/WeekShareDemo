@@ -31,7 +31,7 @@
       </div>
       <div class="example">
         <div class="box boxC" v-show="isShow.C">
-          <input type="checkbox" class="checkbox" id="checkbox_C" checked />
+          <input type="checkbox" class="checkbox" id="checkbox_C" />
           <label for="checkbox_C" class="label_C" id="label_for_checkbox_C"></label>
           <span>這是checkbox</span>
         </div>
@@ -89,13 +89,13 @@
         <button class="btn" v-on:click="showBox('H')">boxH</button>
       </div>
       <div class="example">
-        <div class="box boxI" v-show="!isShow.I">
+        <div class="box boxI" v-show="isShow.I">
           <a href="./example_clock/clockVue.html">這是VUE版</a>
         </div>
         <button class="btn" v-on:click="showBox('I')">box I</button>
       </div>
       <div class="example">
-        <div class="box boxJ" v-show="!isShow.J">
+        <div class="box boxJ" v-show="isShow.J">
           <a href="./example_clock/clock.html">這是純JS版</a>
         </div>
         <button class="btn" v-on:click="showBox('J')">boxJ</button>

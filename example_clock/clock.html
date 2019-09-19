@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/clock_example.min.css" />
+  </head>
+  <!-- 【特定技術】需使用 JS 原生語法的 getDate() 撈取時間，不可用套件
+
+  【特定技術】需使用 JS 原生語法的 setTimeout() 或 setInterval()，持續讓秒針、分針、時針能夠以台北時區移動
+  
+  【特定技術】介面請全部用 CSS2、CSS3 手寫繪製，什麼...？你說太強人所難？？那..用圖片也不是不行辣， 點選一下元素，右側控制列會有個藍色按鈕，點選 [下載] 即可。
+
+  https://xd.adobe.com/spec/43be2f02-1d11-4dfb-4e3d-5c4df1df3896-358f/screen/e7b79d5d-37bb-41f7-8ca2-9df3811589e9/003-clock/
+
+-->
+
+  <body>
+    <main>
+      <div class="clock_body">
+        <div class="clock_circle">
+          <ul class="clock_face"></ul>
+          <div class="hand">
+            <div class="short_hand"></div>
+            <div class="long_hand"></div>
+            <div class="second_hand"><span class="polyline"></span><span class="circle"></span></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="clock.js"></script>
+  </body>
+</html>

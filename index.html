@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Demo</title>
+    <link rel="stylesheet" href="./style/index.min.css" />
+  </head>
+  <body>
+    <header></header>
+    <main id="app" v-cloak>
+      <div class="example">
+        <div class="box boxA" v-show="isShow.A">
+          <p>這是Ｐ標籤</p>
+        </div>
+        <button class="btn" id="btn_boxA" v-on:click="showBox('A')">boxA</button>
+      </div>
+      <div class="example">
+        <div class="box boxB" v-show="isShow.B">
+          <input type="checkbox" class="checkbox" id="checkbox_B" checked />
+          <label for="checkbox_B" class="label_B" id="label_for_checkbox_B"></label>
+          <span>這是span標籤</span>
+        </div>
+        <div class="box boxB" v-show="isShow.B">
+          <input type="checkbox" class="checkbox" id="checkbox_B1" />
+          <label for="checkbox_B1" class="label_B" id="label_for_checkbox_B1"></label>
+          <label for="checkbox_B1" class="label_text" id="label_for_checkbox_B1">這是label標籤</label>
+        </div>
+        <button class="btn" id="btn_boxB" v-on:click="showBox('B')">boxB</button>
+      </div>
+      <div class="example">
+        <div class="box boxC" v-show="isShow.C">
+          <input type="checkbox" class="checkbox" id="checkbox_C" checked />
+          <label for="checkbox_C" class="label_C" id="label_for_checkbox_C"></label>
+          <span>這是checkbox</span>
+        </div>
+        <button class="btn" id="btn_boxC" v-on:click="showBox('C')">boxC</button>
+      </div>
+      <div class="example">
+        <div class="box boxD" v-show="isShow.D">
+          <P class="p1"
+            >君不見黃河之水天上來，奔流到海不復回。 君不見高堂明鏡悲白髮，朝如青絲暮成雪。
+            人生得意須盡歡，莫使金樽空對月。 天生我材必有用，千金散盡還復來。
+          </P>
+          <P class="p2"
+            >君不見黃河之水天上來，奔流到海不復回。<br />
+            君不見高堂明鏡悲白髮，朝如青絲暮成雪。<br />
+            人生得意須盡歡，莫使金樽空對月。<br />
+            天生我材必有用，千金散盡還復來。
+          </P>
+        </div>
+        <button class="btn" v-on:click="showBox('D')">boxD</button>
+      </div>
+      <div class="example">
+        <div class="box boxE" v-show="isShow.E">
+          <P class="p1"
+            >君不見黃河之水天上來，奔流到海不復回。 君不見高堂明鏡悲白髮，朝如青絲暮成雪。
+            人生得意須盡歡，莫使金樽空對月。 天生我材必有用，千金散盡還復來。
+          </P>
+          <P class="p2"
+            >君不見黃河之水天上來，奔流到海不復回。 君不見高堂明鏡悲白髮，朝如青絲暮成雪。
+            人生得意須盡歡，莫使金樽空對月。 天生我材必有用，千金散盡還復來。
+          </P>
+        </div>
+        <button class="btn" v-on:click="showBox('E')">boxE</button>
+      </div>
+      <div class="example">
+        <div class="box boxF" v-show="isShow.F">
+          <input type="text" placeholder="這是placeholder" />
+        </div>
+        <button class="btn" v-on:click="showBox('F')">boxF</button>
+      </div>
+      <div class="example">
+        <div class="box boxG" v-show="isShow.G">
+          <P class="p1">
+            人生得意須盡歡，莫使金樽空對月。 天生我材必有用，千金散盡還復來。
+          </P>
+          <P class="p2">
+            人生得意須盡歡，莫使金樽空對月。 天生我材必有用，千金散盡還復來。
+          </P>
+        </div>
+        <button class="btn" v-on:click="showBox('G')">boxG</button>
+      </div>
+      <div class="example">
+        <div class="box boxH" v-show="isShow.H">
+          <span v-for="item in day" class="p1" :data-day="item">星期</span>
+        </div>
+        <button class="btn" v-on:click="showBox('H')">boxH</button>
+      </div>
+      <div class="example">
+        <div class="box boxI" v-show="!isShow.I">
+          <a href="./example_clock/clockVue.html">這是VUE版</a>
+        </div>
+        <button class="btn" v-on:click="showBox('I')">box I</button>
+      </div>
+      <div class="example">
+        <div class="box boxJ" v-show="!isShow.J">
+          <a href="./example_clock/clock.html">這是純JS版</a>
+        </div>
+        <button class="btn" v-on:click="showBox('J')">boxJ</button>
+      </div>
+    </main>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+  <script src="./js/index.js"></script>
+</html>

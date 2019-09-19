@@ -1,0 +1,209 @@
+@import '_reset.scss';
+body {
+  min-width: 300px;
+  max-width: 600px;
+  margin: 30px auto;
+  a {
+    text-decoration: none;
+    color: #08668b;
+    font-size: 30px;
+  }
+}
+v-cloak {
+  display: none;
+}
+.example {
+  border: 1px solid #000;
+  text-align: center;
+  .btn {
+    cursor: pointer;
+    width: 90px;
+    color: #08668b;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #08668b;
+    margin: 15px 0;
+    &:active {
+      box-shadow: 1px 1px 5px #08668b;
+    }
+  }
+  .box {
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: 60px;
+    text-align: center;
+    .checkbox {
+      display: none;
+    }
+
+    .label_text,
+    span {
+      display: inline-block;
+      font-size: 30px;
+      vertical-align: middle;
+    }
+  }
+  .boxA {
+    p {
+      text-align: center;
+      font-size: 30px;
+      &::before {
+        content: '這是::before';
+        color: red;
+        margin-right: 10px;
+      }
+      &::after {
+        content: '這是::after';
+        color: blue;
+        margin-left: 10px;
+      }
+    }
+  }
+  .boxB {
+    .label_B {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      height: 40px;
+      width: 40px;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      &:hover {
+        background-color: rgb(7, 7, 7);
+      }
+    }
+    input[type='checkbox']:checked + label,
+    input[checked] + label {
+      position: relative;
+      border: 2px solid #919191;
+      &:hover {
+        border: 2px solid #575757;
+        background-color: #ffffff;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 30%;
+        width: 10px;
+        height: 27px;
+        border-bottom: 5px solid #08668b;
+        border-right: 5px solid #08668b;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .boxC {
+    .label_C {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      &:hover {
+        border: 2px solid #575757;
+      }
+    }
+    input[type='checkbox']:checked + label,
+    input[checked] + label {
+      position: relative;
+      border: 2px solid #919191;
+      &:hover {
+        border: 2px solid #575757;
+        background-color: #ffffff;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 9%;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #08668b;
+      }
+    }
+  }
+  .boxD {
+    line-height: 30px;
+    .p1 {
+      border-bottom: 1px solid #000;
+      &::first-line {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    }
+    .p2 {
+      &::first-line {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    }
+  }
+  .boxE {
+    line-height: 30px;
+    .p1 {
+      border-bottom: 1px solid #000;
+      &::first-letter {
+        font-size: 30px;
+      }
+    }
+    .p2 {
+      &::first-letter {
+        font-size: 30px;
+        vertical-align: text-top;
+        margin-right: 5px;
+      }
+    }
+  }
+  .boxF {
+    line-height: 30px;
+    input {
+      margin-top: 15px;
+      height: 30px;
+      padding-left: 10px;
+      &::placeholder {
+        color: #08668b;
+      }
+    }
+  }
+  .boxG {
+    line-height: 30px;
+    .p1 {
+      border-bottom: 1px solid #000;
+      font-size: 18px;
+      &::selection {
+        color: red;
+      }
+    }
+    .p2 {
+      border-bottom: 1px solid #000;
+      font-size: 18px;
+      &::selection {
+        color: red;
+        background-color: yellow;
+      }
+    }
+  }
+  .boxH {
+    span {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 18px;
+      &::after {
+        content: attr(data-day);
+        color: #08668b;
+      }
+    }
+  }
+  .boxI {
+  }
+}

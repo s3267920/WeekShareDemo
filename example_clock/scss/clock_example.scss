@@ -1,0 +1,479 @@
+@import '_reset.scss';
+
+$colors: (
+  color_green: (
+    dark: #293b29,
+    borderDark: #212f0b,
+    lightDark: #3d5a45
+  ),
+  clock: (
+    number: #fff,
+    minute: #ff7600,
+    second: #b1ff00,
+    star: #ff7600,
+    hour: #fff
+  )
+);
+
+$font: 10px 16px 20px 24px 36px;
+
+@function color($color-style: color_green, $color-type: dark) {
+  @return map-get(map-get($colors, $color-style), $color-type);
+}
+
+body {
+  min-width: 350px;
+  font-family: Helvetica Neue;
+}
+
+main {
+  background-color: color(color_green, dark);
+  padding: 17.579% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  .clock_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    background-color: color(color_green, lightDark);
+    border-radius: 80px;
+  }
+
+  .clock_circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background-color: color(color_green, dark);
+    border-radius: 50%;
+    border: 3px solid color(color_green, borderDark);
+    &::after {
+      content: '';
+      width: 235px;
+      height: 235px;
+      border-radius: 50%;
+      border: 1px solid red;
+    }
+  }
+
+  .clock_face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      position: absolute;
+      display: flex;
+
+      .hour {
+        display: flex;
+        flex-direction: column-reverse;
+        color: color(clock, number);
+        position: relative;
+
+        span {
+          position: absolute;
+          display: flex;
+          font-size: nth($font, 1);
+        }
+
+        .tw_time {
+          top: 48px;
+          left: 4px;
+        }
+
+        .line {
+          height: 24px;
+          border-left: 1px solid color(clock, minute);
+          top: 21px;
+          left: 6px;
+        }
+
+        .tf_time {
+          top: 9px;
+          left: 1px;
+        }
+      }
+
+      .minute {
+        position: relative;
+
+        span {
+          position: absolute;
+          border-radius: 50%;
+          width: 2px;
+          height: 2px;
+          color: color(clock, number);
+          background-color: color(clock, number);
+
+          &.middle_star,
+          &.middle_star_two {
+            width: 1px;
+            height: 2.5px;
+            border: 1px solid color(clock, star);
+            background-color: color(clock, star);
+            transform: rotate(-75deg);
+
+            &::before {
+              display: flex;
+              content: '';
+              position: absolute;
+              top: -4px;
+              left: -0.85px;
+              border-top: 1px solid transparent;
+              border-left: 1.3px solid transparent;
+              border-bottom: 3px solid color(clock, star);
+              border-right: 1.3px solid transparent;
+            }
+
+            &::after {
+              display: flex;
+              content: '';
+              position: absolute;
+              top: 2.5px;
+              left: -0.85px;
+              border-top: 3px solid color(clock, star);
+              border-left: 1.3px solid transparent;
+              border-bottom: 1px solid transparent;
+              border-right: 1.3px solid transparent;
+            }
+          }
+
+          &.middle_star_two {
+            transform: rotate(15deg);
+          }
+
+          &:nth-of-type(1) {
+            top: 32px;
+            left: 18px;
+          }
+
+          &:nth-of-type(2) {
+            top: 34px;
+            left: 30.2px;
+          }
+
+          &:nth-of-type(3),
+          &:nth-of-type(4) {
+            top: 24.5px;
+            left: 38px;
+          }
+
+          &:nth-of-type(5) {
+            top: 37px;
+            left: 42px;
+          }
+
+          &:nth-of-type(6) {
+            top: 41.5px;
+            left: 53.5px;
+          }
+        }
+      }
+
+      &:nth-of-type(1) {
+        top: 17px;
+        left: 220px;
+        transform: rotate(30deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-30deg);
+        }
+      }
+
+      &:nth-of-type(2) {
+        top: 69.5px;
+        left: 277px;
+        transform: rotate(60deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-60deg);
+        }
+      }
+
+      &:nth-of-type(3) {
+        top: 143.5px;
+        left: 300.5px;
+        transform: rotate(90deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-90deg);
+        }
+      }
+
+      &:nth-of-type(4) {
+        top: 219.5px;
+        left: 283.5px;
+        transform: rotate(120deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-120deg);
+        }
+      }
+
+      &:nth-of-type(5) {
+        top: 277px;
+        left: 231.5px;
+        transform: rotate(150deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-150deg);
+        }
+      }
+
+      &:nth-of-type(6) {
+        top: 300.5px;
+        left: 157px;
+        transform: rotate(180deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-180deg);
+        }
+      }
+
+      &:nth-of-type(7) {
+        top: 283.5px;
+        left: 81px;
+        transform: rotate(210deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-210deg);
+        }
+      }
+
+      &:nth-of-type(8) {
+        top: 231px;
+        left: 23.5px;
+        transform: rotate(240deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-240deg);
+        }
+      }
+
+      &:nth-of-type(9) {
+        top: 156.5px;
+        left: 0px;
+        transform: rotate(270deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-270deg);
+        }
+      }
+
+      &:nth-of-type(10) {
+        top: 80.5px;
+        left: 17px;
+        transform: rotate(300deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-300deg);
+        }
+      }
+
+      &:nth-of-type(11) {
+        top: 23px;
+        left: 69.6px;
+        transform: rotate(330deg);
+
+        .tw_time,
+        .tf_time {
+          transform: rotate(-330deg);
+        }
+      }
+
+      &:nth-of-type(12) {
+        top: 0px;
+        left: 144px;
+
+        .tw_time {
+          left: 2px;
+        }
+      }
+    }
+    &::after {
+      content: '';
+      width: 0;
+      height: 400px;
+      position: absolute;
+      left: 50%;
+      border-left: 1px solid white;
+      transform: rotate(330deg);
+    }
+  }
+
+  .hand {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+
+    .short_hand {
+      position: absolute;
+      width: 8px;
+      height: 62px;
+      left: -2.5px;
+      bottom: 0px;
+      transform-origin: 50% 95%;
+      border-radius: 0 0 5px 5px;
+      background-color: color(clock, hour);
+      // transform: rotate(180deg);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 3px;
+        width: 2px;
+        height: 15px;
+        background-color: color(color_green, dark);
+      }
+    }
+
+    .long_hand {
+      position: absolute;
+      z-index: 5;
+      width: 8px;
+      height: 86px;
+      left: -2.5px;
+      bottom: 0px;
+      transform-origin: 50% 95%;
+      border-radius: 5px;
+      background-color: color(clock, minute);
+
+      &::before {
+        position: absolute;
+        bottom: 3px;
+        left: 2px;
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: color(clock, number);
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 7px;
+        left: 3.5px;
+        content: '';
+        width: 1px;
+        height: 22px;
+        background-color: color(clock, number);
+      }
+    }
+
+    .second_hand {
+      position: absolute;
+      width: 1px;
+      height: 34px;
+      left: 0px;
+      bottom: 0px;
+      background-color: color(clock, second);
+      transform-origin: bottom;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 9.5px;
+        height: 20px;
+        left: -15px;
+        bottom: 21.5px;
+        border-top: 1px solid color(clock, second);
+        transform: rotate(55deg);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 24px;
+        left: -8px;
+        bottom: 42px;
+        border-right: 1px solid color(clock, second);
+        transform: rotate(30deg);
+      }
+
+      .polyline {
+        position: absolute;
+        width: 1px;
+        z-index: 1;
+        height: 47px;
+        left: 0px;
+        bottom: 69px;
+        background-color: color(clock, second);
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 20px;
+          left: -9px;
+          bottom: -20.5px;
+          border-top: 1px solid color(clock, second);
+          transform: rotate(50deg);
+        }
+      }
+
+      .circle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        bottom: 115px;
+        left: -3.5px;
+        border-radius: 50%;
+        border: 1px solid color(clock, second);
+        background-color: color(color_green, dark);
+        box-sizing: border-box;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          bottom: 1px;
+          left: 1px;
+          background-color: color(clock, second);
+        }
+      }
+    }
+  }
+}
+
+//線
+// &::after {
+//   content: '';
+//   width: 0;
+//   height: 400px;
+//   position: absolute;
+//   left: 50%;
+//   border-left: 1px solid white;
+//   transform: rotate(330deg);
+// }
+
+//圓
+// &::after {
+//   content: '';
+//   width: 235px;
+//   height: 235px;
+//   border-radius: 50%;
+//   border: 1px solid #fff;
+// }

@@ -482,7 +482,7 @@ body a {
   font-size: 30px;
 }
 
-v-cloak {
+[v-cloak] {
   display: none;
 }
 
